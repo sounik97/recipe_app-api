@@ -1,0 +1,7 @@
+[flake8]
+; flake 8 will exclude these files
+exclude = 
+        migration,
+        __pycache__,
+        manage.py,
+        settings.py

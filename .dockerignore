@@ -1,0 +1,19 @@
+# Git
+.git
+.gitignore
+
+# Docker 
+.docker 
+
+# Python
+# When we run python code it creates cache and put it inside pycache, this can create create problem because cache can be 
+# different based on users so we delete this
+# Remove any venv that we create LOCALLY
+
+.app/__pycache__/
+.app/*/__pycache__/
+.app/*/*/__pycache__/
+.app/*/*/*/__pycache__/
+.env
+.venv/
+venv/

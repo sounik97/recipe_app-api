@@ -1,0 +1,22 @@
+version: "3.9"
+
+# docker compose used one or more service
+services: 
+# app is the name of the service
+  app: 
+  # we have build and context, it says we want to build the app in the current root directory
+    build: 
+      context: .
+      # setting up dev env 
+      args:
+      - DEV=true
+    # this maps 8000 local machine to 8000 of docker container
+    ports:
+      - "8000:8000"
+    # volumes are way of mapping from our system to the docker container
+    # the reason we add this is when we update on in the local project it should update in the docker container image
+    volumes:
+      - ./app:/app
+  # Command to use to run the service
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
